@@ -26,8 +26,7 @@ resource "oci_core_security_list" "app_security_list" {
         type = 0
       }
     }
-    //Uncomment for APP tcp ingress rules
-    /*----------------------------------------------------------------
+    //APP tcp ingress rules
     dynamic "ingress_security_rules" {
        iterator = each_rule
        for_each = [for y in var.security_list_rules_app_ingress_tcp : {
@@ -47,7 +46,7 @@ resource "oci_core_security_list" "app_security_list" {
              max = each_rule.value.maxport
            }
          }
-    }*/
+    }
 
     //Uncomment for APP udp ingress rules
     /*----------------------------------------------------------------
@@ -107,8 +106,7 @@ resource "oci_core_security_list" "app_security_list" {
       }
     }*/
 
-    //Uncomment for APP tcp ingress rules
-    /*----------------------------------------------------------------
+    //APP tcp egress rules
     dynamic "egress_security_rules" {
        iterator = each_rule
        for_each = [for y in var.security_list_rules_app_egress_tcp : {
@@ -128,7 +126,7 @@ resource "oci_core_security_list" "app_security_list" {
              max = each_rule.value.maxport
            }
          }
-    }*/
+    }
 
     //Uncomment for APP udp egress rules
     /*----------------------------------------------------------------

@@ -61,10 +61,10 @@ security_list_display_name_app = "seclist_dmz_app"
 //APP Example TCP Ingress Rules
 security_list_rules_app_ingress_tcp =[
     {
-    //Example Rule - Remove when rules are in use
+    //Allow 443 ingress
      minport     = 443
      maxport     = 443
-     source_cidr = "10.99.96.0/22"
+     source_cidr = "0.0.0.0/0"
      protocol    = 6
      stateless = "false"
     }]
@@ -82,10 +82,10 @@ security_list_rules_app_ingress_udp =[
 //APP Example TCP Egress Rule
 security_list_rules_app_egress_tcp =[
     {
-    //Example Rule - Remove when rules are in use
+    //Allow 443 Egress
        minport     = 443
        maxport     = 443
-       destination_cidr = "10.153.112.114/32"
+       destination_cidr = "0.0.0.0/0"
        protocol    = 6
        stateless   = "false"
     }]
