@@ -15,7 +15,7 @@ resource "oci_core_subnet" "app_ad_1" {
     display_name = var.display_name_app_cidr_block_1
     dns_label = var.dns_label_app_cidr_block_1
     security_list_ids = [oci_core_security_list.app_security_list.id,]
-    #prohibit_public_ip_on_vnic = "false"
+    prohibit_public_ip_on_vnic = "false"
 }
 
 resource "oci_core_subnet" "app_ad_2" {
@@ -26,7 +26,7 @@ resource "oci_core_subnet" "app_ad_2" {
     display_name = var.display_name_app_cidr_block_2
     dns_label = var.dns_label_app_cidr_block_2
     security_list_ids = [oci_core_security_list.app_security_list.id,]
-    #prohibit_public_ip_on_vnic = "false"
+    prohibit_public_ip_on_vnic = "false"
 }
 
 resource "oci_core_subnet" "app_ad_3" {
@@ -37,5 +37,5 @@ resource "oci_core_subnet" "app_ad_3" {
     display_name = var.display_name_app_cidr_block_3
     dns_label = var.dns_label_app_cidr_block_3
     security_list_ids = [oci_core_security_list.app_security_list.id,]
-    #prohibit_public_ip_on_vnic = "false"
+    prohibit_public_ip_on_vnic = "false"
 }
